@@ -1,0 +1,200 @@
+@font-face
+  font-family "yoon_gothic"
+  src url('./font/YoonGothicPro740.woff')
+  src url('./font/YoonGothicPro740.eot')
+  src url('./font/YoonGothicPro740.eot?#iefix') format('embedded-opentype'),
+url('./font/YoonGothicPro740.woff') format('woff'),
+url('./font/YoonGothicPro740.ttf') format('truetype'),
+url('./font/YoonGothicPro740.svg#YoonGothicPro740') format('svg')
+
+body
+  font-family 'yoon_gothic', 'helvetica', serif !important
+
+h1, h2, h3, h4, h5, p, div, ul, button
+  font-family 'yoon_gothic', 'helvetica', serif !important
+
+/* button customization */
+.btn
+  font-size 1em
+.btn-primary
+  color black
+  background-color white
+  border-color black
+  &:hover
+    color black
+    background-color white
+    border-color black
+  &:active
+    color black
+    background-color white
+    border-color black
+  &:focus
+    color black
+    background-color white
+    border-color black
+
+.btn-primary.active, .btn-primary:active, .open>.btn-primary.dropdown-toggle
+  color black
+  background-color white
+  border-color black
+  &:hover
+    color white
+    background-color black
+  &:focus
+    color black
+    background-color white
+    border-color black
+.upvote-button
+  &:hover
+    color white !important
+    background-color black
+    text-decoration none !important
+    border-color black
+a
+  color black
+  text-decoration none
+  &:not([href]):not([tabindex]):hover
+    color #55595c
+    text-decoration underline
+
+.posts-load-more, .comments-load-more
+  font-size 1.2em
+  &:hover
+    background-color black
+    border-color inherit
+    color black
+
+/* header wrapper */
+.header-wrapper
+  background-color transparent
+  margin-bottom 0
+  .header
+    padding-top 0
+    padding-bottom 0
+
+.logo
+  .logo-image
+    img
+      @media screen and (max-width: 600px)
+        max-width 185px
+        max-height 22px
+      @media screen and (min-width: 600px)
+        max-width 185px
+        max-height 22px
+
+/* font & margin */
+body
+  font-size 0.8em
+  line-height 1.6em
+.dropdown-item.active, .dropdown-item.active:focus, .dropdown-item.active:hover
+  color #fff
+  text-decoration none
+  background-color black
+  outline 0
+
+.dropdown-menu
+  font-size 1em
+.dropdown-item.active
+  background-color #55595c
+  color white
+  &:hover, &:active, &:focus
+    background-color black
+.dropdown-item
+  &:hover, &:active, &:focus
+    background-color black
+    color white
+    a
+      color white
+
+h3
+  font-size 1.4em
+h4
+  font-size 1.2em
+.newsletter .newsletter-tagline
+  font-size 1em
+.form-control
+  font-size 0.9em
+  padding: 0.5em
+  border-color #55595c
+  &:focus
+    border-color black
+.posts-list-content
+  border none
+.posts-item
+  padding-top 0.5em
+  padding-bottom 0.5em
+  border none !important
+.posts-item-title
+  font-size 1em
+.posts-item-meta
+  font-size 0.8em
+
+.posts-page-body
+  font-size inherit
+p
+  margin-bottom 0.2em
+
+/* post list */
+.posts-list-header
+  margin-bottom 1em
+  .posts-views
+    padding-left 0
+    margin-bottom 0
+    .dropdown-item
+      clear none
+      width inherit
+      float left
+      padding-right 2em
+      text-align left
+.posts-list-body
+  margin-top -1em
+  .posts-list-header-categories
+    width: 10em
+    li
+      display block
+    margin-top 0.9em
+    float left
+    width 80px
+  .posts-list-content
+    float right
+    width 85%
+  .categories-new-button
+    &:hover
+      background-color: white
+      color: black
+
+.footer
+  clear both
+/* comment */
+.comments-item-body
+  border none
+  padding 0
+.comments-item-meta
+  .user-name
+    font-size: 1.1em
+  .comments-item-date
+    font-size: 1.0em
+  .comment-edit, .comment-delete
+    font-size: 1.0em
+  margin-bottom 0.1em
+.comments-item-text
+  div
+    padding-left: 3em
+
+/* login */
+.users-account-menu
+  .icon
+    display block
+
+/* categories */
+.posts-list-header-categories
+  .categories-node
+    .category-menu-item
+      width 12em
+.posts-categories
+  a
+    font-size 1em
+    &:hover
+      border-color black
+      background-color black
+      color white
