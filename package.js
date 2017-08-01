@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'spectrum:vulcan-forum-bwtheme',
+  name: 'spectrum:vulcan-forum-bwtheme'
 });
 
 Package.onUse((api) => {
@@ -29,18 +29,14 @@ Package.onUse((api) => {
     'vulcan:email-templates',
 
     // others
-    'stylus',
+    'stylus'
   ]);
 
-  /* /packages/spectrum-vulcan-forum-bwtheme/lib/static/GL-Logo-31.png */
-  api.addAssets([
-    'lib/static/GL-Logo-31.png',
-    'lib/stylesheets/font/YoonGothicPro740.eot',
-    'lib/stylesheets/font/YoonGothicPro740.ttf',
-    'lib/stylesheets/font/YoonGothicPro740.woff'
-  ], ['client']);
+  // api.addAssets([
+  // ], ['client']);
 
   api.addFiles([
+    'lib/stylesheets/font.css',
     'lib/stylesheets/main.styl'
   ], ['client']);
 
