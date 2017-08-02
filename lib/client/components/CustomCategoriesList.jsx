@@ -68,31 +68,39 @@ class CustomCategoriesList extends PureComponent {
 
     return (
       <div>
-        <ul className="category-menu-item category-menu-item-all dropdown-item">
-          <LinkContainer className="category-menu-item-title" to={{pathname:"/", query: allCategoriesQuery}}>
-            <MenuItem eventKey={0}>
-              <FormattedMessage id="categories.all"/>
-            </MenuItem>
-          </LinkContainer>
-        </ul>
-        {
-          // categories data are loaded
-          !this.props.loading ?
-            // there are currently categories
-            nestedCategories && nestedCategories.length > 0 ?
-              nestedCategories.map((category, index) => <Components.CategoriesNode key={index} category={category} index={index} openModal={this.openCategoryEditModal}/>)
-              // not any category found
-              : null
-            // categories are loading
-            : <div className="dropdown-item"><MenuItem><Components.Loading /></MenuItem></div>
-        }
-        <Components.ShowIf check={Categories.options.mutations.new.check}>
-          <div className="categories-new-button category-menu-item dropdown-item">
-            <ModalTrigger title={<FormattedMessage id="categories.new"/>} component={<Button bsStyle="primary"><FormattedMessage id="categories.new"/></Button>}>
-              <Components.CategoriesNewForm/>
-            </ModalTrigger>
+        <DropdownButton
+          bsStyle="default"
+          className="categories-list btn-secondary"
+          title={"Tags"}
+          id="categories-dropdown"
+        >
+          <div className="category-menu-item category-menu-item-all dropdown-item">
+            <LinkContainer className="category-menu-item-title" to={{pathname:"/", query: allCategoriesQuery}}>
+              <MenuItem eventKey={0}>
+                <FormattedMessage id="categories.all"/>
+              </MenuItem>
+            </LinkContainer>
           </div>
-        </Components.ShowIf>
+          {
+            // categories data are loaded
+            !this.props.loading ?
+              // there are currently categories
+              nestedCategories && nestedCategories.length > 0 ?
+                nestedCategories.map((category, index) => <Components.CategoriesNode key={index} category={category} index={index} openModal={this.openCategoryEditModal}/>)
+                // not any category found
+                : null
+              // categories are loading
+              : <div className="dropdown-item"><MenuItem><Components.Loading /></MenuItem></div>
+          }
+          <Components.ShowIf check={Categories.options.mutations.new.check}>
+            <div className="categories-new-button category-menu-item dropdown-item">
+              <ModalTrigger title={<FormattedMessage id="categories.new"/>} component={<Button bsStyle="primary"><FormattedMessage id="categories.new"/></Button>}>
+                <Components.CategoriesNewForm/>
+              </ModalTrigger>
+            </div>
+          </Components.ShowIf>
+        </DropdownButton>
+
       </div>
     )
 
