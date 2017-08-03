@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'spectrum:vulcan-forum-bwtheme'
+  name: 'spectrum:whitecat-vulcan'
 });
 
 Package.onUse((api) => {
