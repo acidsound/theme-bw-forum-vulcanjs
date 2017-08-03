@@ -13,7 +13,7 @@ const CustomPostsNewButton = (props) => {
       <Components.PostsNewForm />
     </Components.ModalTrigger>
   )
-}
+};
 
 CustomPostsNewButton.displayName = 'PostsNewButton';
 

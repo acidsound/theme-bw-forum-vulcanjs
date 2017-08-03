@@ -2,13 +2,12 @@ import { replaceComponent, withCurrentUser } from 'meteor/vulcan:core';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, intlShape } from 'meteor/vulcan:i18n';
-import DropdownButton from 'react-bootstrap/lib/DropdownButton';
 import MenuItem from 'react-bootstrap/lib/MenuItem';
 import { LinkContainer } from 'react-router-bootstrap';
 import { withRouter } from 'react-router'
 import Users from 'meteor/vulcan:users';
 
-const CustomPostsViews = (props, context) => {
+const CustomPostsViews = (props) => {
 
   let views = ["top", "new", "best"];
   const adminViews = ["pending", "rejected", "scheduled"];
@@ -35,7 +34,7 @@ const CustomPostsViews = (props, context) => {
       </LinkContainer>
     </ul>
   )
-}
+};
 
 CustomPostsViews.propTypes = {
   currentUser: PropTypes.object,
