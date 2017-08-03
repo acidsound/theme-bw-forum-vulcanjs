@@ -1,3 +1,6 @@
+.main, .footer, .heaer
+  @media screen and (min-width: 600px)
+    max-width: 66.6666%
 body
   font-family 'KoPub Dotum', 'helvetica', serif !important
 
@@ -117,8 +120,6 @@ h4
   border-color #55595c
   &:focus
     border-color black
-.posts-list-content
-  border none
 .posts-item
   padding-top 0.5em
   padding-bottom 0.5em
@@ -155,8 +156,9 @@ p
     float left
     width 80px
   .posts-list-content
+    border none
     float right
-    width 85%
+    width 75%
   .categories-new-button
     &:hover
       background-color white
