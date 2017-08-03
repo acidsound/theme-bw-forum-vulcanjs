@@ -1,6 +1,5 @@
-import { ModalTrigger, Components, replaceComponent, withList, Utils } from "meteor/vulcan:core";
+import { ModalTrigger, Components, replaceComponent, withList, Utils, getRawComponent } from "meteor/vulcan:core";
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 import Button from 'react-bootstrap/lib/Button';
 import DropdownButton from 'react-bootstrap/lib/DropdownButton';
@@ -10,55 +9,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import Categories from 'meteor/vulcan:categories';
 import { withApollo } from 'react-apollo';
 
-class CustomCategoriesList extends PureComponent {
-
-  constructor() {
-    super();
-    this.getCurrentCategoriesArray = this.getCurrentCategoriesArray.bind(this);
-    this.getCategoryLink = this.getCategoryLink.bind(this);
-  }
-
-  getCurrentCategoriesArray() {
-    const currentCategories = _.clone(this.props.location.query.cat);
-    if (currentCategories) {
-      return Array.isArray(currentCategories) ? currentCategories : [currentCategories]
-    } else {
-      return [];
-    }
-  }
-
-  getCategoryLink(slug) {
-    const categories = this.getCurrentCategoriesArray();
-    return {
-      pathname: '/',
-      query: {
-        ...this.props.location.query,
-        cat: categories.includes(slug) ? _.without(categories, slug) : categories.concat([slug])
-      }
-    }
-  }
-
-  getNestedCategories() {
-    const categories = this.props.results;
-
-    // check if a category is currently active in the route
-    const currentCategorySlug = this.props.router.location.query && this.props.router.location.query.cat;
-    const currentCategory = Categories.findOneInStore(this.props.client.store, {slug: currentCategorySlug});
-    const parentCategories = Categories.getParents(currentCategory, this.props.client.store);
-
-    // decorate categories with active and expanded properties
-    const categoriesClone = _.map(categories, category => {
-      return {
-        ...category, // we don't want to modify the objects we got from props
-        active: currentCategory && category.slug === currentCategory.slug,
-        expanded: parentCategories && _.contains(_.pluck(parentCategories, 'slug'), category.slug)
-      };
-    });
-
-    const nestedCategories = Utils.unflatten(categoriesClone, {idProperty: '_id', parentIdProperty: 'parentId'});
-
-    return nestedCategories;
-  }
+class CustomCategoriesList extends getRawComponent('CategoriesList') {
 
   render() {
 
@@ -107,17 +58,4 @@ class CustomCategoriesList extends PureComponent {
   }
 }
 
-CustomCategoriesList.propTypes = {
-  results: PropTypes.array,
-};
-
-
-const options = {
-  collection: Categories,
-  queryName: 'categoriesListQuery',
-  fragmentName: 'CategoriesList',
-  limit: 0,
-  pollInterval: 0,
-};
-
-replaceComponent('CategoriesList', CustomCategoriesList, withRouter, withApollo, [withList, options]);
+replaceComponent('CategoriesList', CustomCategoriesList);

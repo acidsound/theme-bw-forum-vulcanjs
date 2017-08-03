@@ -1,4 +1,4 @@
-import { Components, replaceComponent, ModalTrigger } from 'meteor/vulcan:core';
+import { Components, replaceComponent, ModalTrigger, getRawComponent } from 'meteor/vulcan:core';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
@@ -6,25 +6,7 @@ import { Link } from 'react-router';
 import Posts from "meteor/vulcan:posts";
 import moment from 'moment';
 
-class CustomPostsItem extends PureComponent {
-
-  renderCategories() {
-    return this.props.post.categories && this.props.post.categories.length > 0 ? <Components.PostsCategories post={this.props.post} /> : "";
-  }
-
-  renderCommenters() {
-    return this.props.post.commenters && this.props.post.commenters.length > 0 ? <Components.PostsCommenters post={this.props.post}/> : "";
-  }
-
-  renderActions() {
-    return (
-      <div className="posts-actions">
-        <ModalTrigger title="Edit Post" component={<a className="posts-action-edit"><FormattedMessage id="posts.edit"/></a>}>
-          <Components.PostsEditForm post={this.props.post} />
-        </ModalTrigger>
-      </div>
-    )
-  }
+class CustomPostsItem extends getRawComponent('PostsItem') {
 
   renderSummary() {
     return (
@@ -79,11 +61,5 @@ class CustomPostsItem extends PureComponent {
     )
   }
 }
-
-CustomPostsItem.propTypes = {
-  currentUser: PropTypes.object,
-  post: PropTypes.object.isRequired,
-  terms: PropTypes.object,
-};
 
 replaceComponent('PostsItem', CustomPostsItem);
