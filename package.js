@@ -32,8 +32,10 @@ Package.onUse((api) => {
     'stylus'
   ]);
 
-  // api.addAssets([
-  // ], ['client']);
+  api.addAssets([
+    // whitecat logo
+    'lib/assets/imgs/whitecat.svg'
+  ], ['client']);
 
   api.addFiles([
     'lib/stylesheets/font.css',
