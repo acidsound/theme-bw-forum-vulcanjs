@@ -2,10 +2,10 @@
 
 WhiteCat theme for vulcanJS
 
-# Prerequisite
+## Prerequisite
 install Meteor
 
-# How to install
+## How to install
 * clone ```vulcan``` and ```whitecat``` repository side by side.
 ```
 $ https://github.com/VulcanJS/Vulcan.git
@@ -37,5 +37,5 @@ or if you use the windows.
 meteor run --settings settings.json
 ```
 
-# Customization
+## Customization
 TBD
