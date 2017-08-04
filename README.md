@@ -13,11 +13,11 @@ $ https://github.com/acidsound/whitecat-vulcan.git
 ```
 * copy ```sample_setting.json``` to ```settings.json``` into the Vulcan directory.
 ```
-cd whitecat-vulcan
-cp sample_settings.json ../vulcan/settings.json
+cp whitecat-vulcan/sample_settings.json vulcan/settings.json
 ```
 * in the ```vulcan``` directory. install npm packges
 ```
+cd vulcan
 meteor npm install
 ```
 * set the ```METEOR_PACKAGE_DIRS```
