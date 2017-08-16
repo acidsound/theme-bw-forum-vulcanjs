@@ -1,14 +1,15 @@
-import React from 'react';
-import { registerComponent } from 'meteor/vulcan:core';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router'
 
-const CategoriesListViewer = () => {
-  return (
-    <div>
-      <h1>Welcome To My Custom Page!</h1>
-      <p>Nice to meet you.</p>
-    </div>
-  )
-};
 
-export default CategoriesListViewer;
-// registerComponent('CategoriesListViewer', CategoriesListViewer);
+class CategoriesListViewer extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Another Two</h1>
+      </div>
+    );
+  }
+}
+
+export default withRouter(CategoriesListViewer)
