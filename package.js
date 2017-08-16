@@ -5,13 +5,13 @@ Package.describe({
 Package.onUse((api) => {
   api.use([
     // vulcan core
-    'vulcan:core@1.6.0',
+    'vulcan:core',
 
     // vulcan packages
-    'vulcan:posts@1.6.0',
-    'vulcan:comments@1.6.0',
-    'vulcan:voting@1.6.0',
-    'vulcan:accounts@1.6.0',
+    'vulcan:posts',
+    'vulcan:comments',
+    'vulcan:voting',
+    'vulcan:accounts',
     'vulcan:email',
     'vulcan:forms',
     'vulcan:newsletter',

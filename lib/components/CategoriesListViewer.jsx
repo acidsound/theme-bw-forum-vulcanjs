@@ -10,4 +10,5 @@ const CategoriesListViewer = () => {
   )
 };
 
-registerComponent('CategoriesListViewer', CategoriesListViewer);
+export default CategoriesListViewer;
+// registerComponent('CategoriesListViewer', CategoriesListViewer);
