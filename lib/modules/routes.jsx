@@ -1,7 +1,6 @@
-import { addRoute } from 'meteor/vulcan:core';
-import CategoriesListViewer from '../components/CategoriesListViewer.jsx';
+import { addRoute, getComponent } from 'meteor/vulcan:core';
 addRoute({
   name: 'categories',
   path: '/categories/list',
-  component: CategoriesListViewer
+  component: getComponent('CategoriesListViewer')
 });

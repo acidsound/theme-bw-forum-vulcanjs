@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router'
-
+import { registerComponent } from 'meteor/vulcan:core';
 
 class CategoriesListViewer extends Component {
   render() {
@@ -12,4 +11,4 @@ class CategoriesListViewer extends Component {
   }
 }
 
-export default withRouter(CategoriesListViewer)
+registerComponent('CategoriesListViewer', CategoriesListViewer);
