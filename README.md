@@ -38,4 +38,6 @@ meteor run --settings settings.json
 ```
 
 ## Customization
-TBD
+file structure
+
+![directory structure](https://g.gravizo.com/svg?%20digraph%20G%20{%20%22package.js%22%20-%3E%20%22server.js%22%20-%3E%20%22module.js%22;%20%22server.js%22%20-%3E%20%22templates.js%22;%20%22package.js%22%20-%3E%20%22client.js%22%20-%3E%20%22module.js%22;%20%22module.js%22%20-%3E%20%22components%22;%20%22module.js%22%20-%3E%20%22routes%22;%20%22routes%22%20-%3E%20%22components%22;%20)
