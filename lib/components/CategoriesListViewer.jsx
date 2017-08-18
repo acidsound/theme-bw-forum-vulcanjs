@@ -1,14 +1,30 @@
-import React, { Component } from 'react';
-import { registerComponent } from 'meteor/vulcan:core';
+import React, { PureComponent } from 'react';
+import { registerComponent, withList } from 'meteor/vulcan:core';
+import Categories from 'meteor/vulcan:categories';
 
-class CategoriesListViewer extends Component {
+class CategoriesListViewer extends PureComponent {
   render() {
     return (
       <div>
-        <h1>Another Two</h1>
+        <h1>Categories</h1>
+        <ul>
+          {
+            this.props.results.map(o=>(
+              <li>{o.name}</li>
+            ))
+          }
+        </ul>
       </div>
     );
   }
 }
 
-registerComponent('CategoriesListViewer', CategoriesListViewer);
+const options = {
+  collection: Categories,
+  queryName: 'categoriesListQuery',
+  fragmentName: 'CategoriesList',
+  limit: 0,
+  pollInterval: 0,
+};
+
+registerComponent('CategoriesListViewer', CategoriesListViewer,[withList, options]);
